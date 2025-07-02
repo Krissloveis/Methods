@@ -1,0 +1,24 @@
+import java.time.LocalDateTime;
+import java.util.Scanner;
+
+import static java.util.stream.DoubleStream.iterate;
+
+public class main {
+
+    public static void main(String[] args) {
+        Printer printer = new Printer();
+        printer.append("some text 133", "Справка");
+        printer.append("some text 210", 544);
+        System.out.println(printer.getPendingPagesCount()); // 545
+        printer.print();
+        printer.append("some text 8", 530);
+        printer.clear();
+        printer.append("some text 23", "Договор", 312);
+        printer.append("some text 11");
+        printer.print();
+        System.out.println(printer.getPrintedPagesCount()); // 858
+    }
+}
+
+
+
